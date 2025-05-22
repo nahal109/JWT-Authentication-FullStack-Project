@@ -1,0 +1,11 @@
+<div class="header">
+  <div class="logo">SpringBoot Academy</div>
+  <div class="menu-icon" (click)="toggleMenu()">
+    ☰
+  </div>
+  <ul class="menu" [class.open]="isMenuOpen">
+    <li *ngFor="let item of menuItems" (click)="navigateTo(item.path)">
+      {{ item.label }}
+    </li>
+  </ul>
+</div>

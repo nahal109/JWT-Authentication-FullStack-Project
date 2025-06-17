@@ -1,0 +1,111 @@
+
+<!--&lt;!&ndash;<mat-toolbar color="burlywood">&ndash;&gt;-->
+<!--&lt;!&ndash;  <mat-toolbar-row>&ndash;&gt;-->
+<!--&lt;!&ndash;    <mat-icon style="cursor: pointer; color: slateblue" (click)="toggalMenu()">menu</mat-icon>&ndash;&gt;-->
+<!--&lt;!&ndash;    <span class="toolbar-spacer"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;    <span style="color: slateblue" >BuilderBroo</span>&ndash;&gt;-->
+<!--&lt;!&ndash;    <span class="toolbar-spacer"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;    <button mat-raised-button color="accent">&ndash;&gt;-->
+<!--&lt;!&ndash;      <mat-icon>logout</mat-icon> Login&ndash;&gt;-->
+<!--&lt;!&ndash;    </button>&ndash;&gt;-->
+<!--&lt;!&ndash;    <button mat-raised-button color="accent">&ndash;&gt;-->
+<!--&lt;!&ndash;      <mat-icon>logout</mat-icon> Logout&ndash;&gt;-->
+<!--&lt;!&ndash;    </button>&ndash;&gt;-->
+
+<!--&lt;!&ndash;  </mat-toolbar-row>&ndash;&gt;-->
+<!--&lt;!&ndash;</mat-toolbar>&ndash;&gt;-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <mat-icon style="cursor: pointer; color: white" (click)="toggalMenu()">menu</mat-icon>
+  <span class="toolbar-spacer"></span>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">BuilderBroo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/admin"
+          *ngIf="UserService.roleEqual(['Admin'])">Admin Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/user"
+          *ngIf="UserService.roleEqual(['User'])">User Dashboard</a>
+        </li>
+
+      </ul>
+      <span class="span-left">
+      <button *ngIf="!isLoggedIn()" mat-raised-button color="accent"  >
+      <mat-icon routerLink="/login">login</mat-icon> Login
+      </button>
+        </span>
+        <span class="span-left">
+      <button *ngIf="!isLoggedIn()" mat-raised-button color="accent">
+        <mat-icon routerLink="/signup">login</mat-icon> Signup
+      </button>
+      </span>
+      <span class="span-left">
+      <button *ngIf="isLoggedIn()" mat-raised-button color="accent">
+      <mat-icon (click)="logout()">logout</mat-icon> Logout
+      </button>
+      </span>
+    </div>
+  </div>
+</nav>
+
+<!--<mat-toolbar class="toolbar">-->
+<!--  <mat-toolbar-row>-->
+<!--    <mat-icon style="cursor: pointer; color: white" (click)="toggalMenu()"> menu </mat-icon>-->
+<!--    <span class="span-left" > BUILDERbroo </span>-->
+<!--    <span class="span-left">-->
+<!--      <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>-->
+<!--    </span>-->
+<!--    <span class="span-left">-->
+<!--      <a class="nav-link active" aria-current="page" routerLink="/admin"-->
+<!--          *ngIf="UserService.roleEqual(['Admin'])">Admin Dashboard</a>-->
+<!--    </span>-->
+<!--    <span class="span-left">-->
+<!--      <a class="nav-link active" aria-current="page" routerLink="/user"-->
+<!--          *ngIf="UserService.roleEqual(['User'])">User Dashboard</a>-->
+<!--    </span>-->
+<!--    <span class="toolbar-spacer"></span>-->
+<!--    <span class="span-left">-->
+<!--    <mat-icon class="account_circle">account_circle</mat-icon>-->
+<!--    </span>-->
+<!--    <span class="span-left">-->
+<!--    <mat-icon class="logout">logout</mat-icon>-->
+<!--    </span>-->
+<!--  </mat-toolbar-row>-->
+<!--</mat-toolbar>-->
+
+<!--&lt;!&ndash;side nav container&ndash;&gt;-->
+<!--<mat-sidenav-container>-->
+<!--  <mat-sidenav #drawer mode="side" position="start">-->
+<!--    <mat-list>-->
+<!--      <mat-list-item [routerLinkActive]="['active']">-->
+<!--        <mat-icon style="color: slateblue" mat-list-icon></mat-icon>-->
+<!--        <a style="color: slateblue" routerLink="/a" >A</a>-->
+<!--      </mat-list-item>-->
+<!--      <mat-list-item [routerLinkActive]="['active']">-->
+<!--        <mat-icon style="color: slateblue" mat-list-icon></mat-icon>-->
+<!--        <a style="color: slateblue" >B</a>-->
+<!--      </mat-list-item>-->
+<!--      <mat-list-item [routerLinkActive]="['active']">-->
+<!--        <mat-icon style="color: slateblue" mat-list-icon></mat-icon>-->
+<!--        <a style="color: slateblue" >C</a>-->
+<!--      </mat-list-item>-->
+
+<!--    </mat-list>-->
+<!--  </mat-sidenav>-->
+<!--  <mat-sidenav-content>-->
+<!--      <router-outlet></router-outlet>-->
+<!--  </mat-sidenav-content>-->
+<!--</mat-sidenav-container>-->
+
+
+
+

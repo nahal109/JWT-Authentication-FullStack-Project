@@ -1,0 +1,47 @@
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.navbar navbar-expand-lg navbar-dark bg-primary{
+  height: 48px;
+  min-height: 48px;
+}
+
+.mat-toolbar{
+}
+
+.span-left{
+  padding-left: 15px;
+  color: #f8f9fa;
+  font-size: medium;
+}
+
+.account_circle{
+  cursor: pointer;
+  color: #f8f9fa;
+}
+
+.logout{
+  cursor: pointer;
+  color: #dc3545;
+}
+.mat-sidenav-container{
+  position: fixed;
+  height: 89%;
+  min-height: 89%;
+  width: 100%;
+  min-width: 100%;
+  background-color: transparent;
+}
+.mat-sidenav{
+  width: 250px;
+}
+.mat-sidenav{
+  height: 100vh;
+  z-index: 1;
+  width: 200px;
+  min-width: 200px;
+  padding: 16px;
+  background-color: transparent;
+}
+

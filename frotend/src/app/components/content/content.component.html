@@ -1,0 +1,39 @@
+
+
+
+<mat-drawer-container class="example-container" autosize >
+  <mat-drawer [opened]="opened" mode="side" >
+    <mat-list>
+
+      <mat-list-item [routerLinkActive]="['active']">
+        <mat-icon style="color: slateblue" mat-list-icon></mat-icon>
+        <a style="color: slateblue" routerLink="/a" >A</a>
+      </mat-list-item>
+
+      <mat-list-item [routerLinkActive]="['active']">
+        <mat-icon style="color: slateblue" mat-list-icon></mat-icon>
+        <a style="color: slateblue" >B</a>
+      </mat-list-item>
+
+      <mat-list-item [routerLinkActive]="['active']">
+        <mat-icon style="color: slateblue" mat-list-icon></mat-icon>
+        <a style="color: slateblue" >C</a>
+      </mat-list-item>
+
+      <mat-list-item [routerLinkActive]="['active']">
+        <mat-icon style="color: slateblue" mat-list-icon></mat-icon>
+        <a style="color: slateblue" >D</a>
+      </mat-list-item>
+
+    </mat-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+
